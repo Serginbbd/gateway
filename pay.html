@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagar cobrança</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-body">
+
+  <section class="auth-left">
+    <div class="auth-illustration">
+      <div class="auth-circle">G</div>
+      <h2>Pagamento seguro via Pix</h2>
+      <p>Confira os dados da cobrança e siga para o pagamento.</p>
+    </div>
+  </section>
+
+  <section class="auth-right">
+    <div class="auth-card">
+      <div class="auth-logo">GATEWAY</div>
+
+      <h1 id="payTitle">Carregando...</h1>
+      <p id="payDescription"></p>
+
+      <h2 id="payAmount">R$ 0,00</h2>
+
+      <button id="payButton">Pagar com Pix</button>
+
+      <small id="payStatus"></small>
+    </div>
+  </section>
+
+  <script src="js/api.js"></script>
+  <script src="js/pay.js"></script>
+</body>
+</html>

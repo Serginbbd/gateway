@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Gateway</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">GATEWAY</div>
+
+    <button class="main-btn" onclick="window.location.href='deposit.html'">
+      Criar cobrança
+    </button>
+
+    <nav>
+      <a class="active" href="dashboard.html">⌂ Início</a>
+      <a href="clients.html">👥 Meus Clientes</a>
+      <a href="#">💵 Cobranças</a>
+      <a href="deposit.html">❖ Pix</a>
+      <a href="#">🔗 Links de Pagamento</a>
+      <a href="transactions.html">▤ Transações</a>
+      <a href="#">⚙ Configurações</a>
+      <a onclick="logout()">↩ Sair</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="topbar">
+      <div>
+        <span>Saldo em conta</span>
+        <h2 id="balance">R$ 0,00</h2>
+      </div>
+
+      <div class="user-area">
+        <span id="userName">Usuário</span>
+        <button onclick="logout()">Sair</button>
+      </div>
+    </header>
+
+    <section class="page">
+      <div class="breadcrumb">⌂ Início</div>
+      <h1>Olá, <span id="helloName">Usuário</span></h1>
+
+      <div class="onboarding-card">
+        <div class="onboarding-left">
+          <div class="folder-icon"></div>
+        </div>
+
+        <div class="onboarding-right">
+          <h2>Configure sua integração</h2>
+          <div class="pending">Pendente</div>
+
+          <div class="doc-box">
+            <div class="doc-top">
+              <strong>Dados de integração</strong>
+              <span class="badge-danger">Não configurado</span>
+            </div>
+
+            <div class="qr-row">
+              <div class="qr"></div>
+
+              <div>
+                <p>
+                  Gere sua chave de API, configure seu webhook e comece a receber pagamentos Pix.
+                </p>
+                <button class="copy-btn">Copiar link</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="grid-cards">
+        <div class="info-card">
+          <span>Saldo disponível</span>
+          <strong id="cardBalance">R$ 0,00</strong>
+        </div>
+
+        <div class="info-card">
+          <span>Depósitos pendentes</span>
+          <strong>0</strong>
+        </div>
+
+        <div class="info-card">
+          <span>Transações hoje</span>
+          <strong>0</strong>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Situação das cobranças</h2>
+        <p>Nenhuma cobrança registrada até o momento.</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

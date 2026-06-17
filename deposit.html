@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Depósito - Gateway</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">GATEWAY</div>
+
+    <button class="main-btn">Criar cobrança</button>
+
+    <nav>
+      <a href="dashboard.html">⌂ Início</a>
+      <a href="#">👥 Meus Clientes</a>
+      <a href="#">💵 Cobranças</a>
+      <a class="active" href="deposit.html">❖ Pix</a>
+      <a href="#">🔗 Links de Pagamento</a>
+      <a href="transactions.html">▤ Transações</a>
+      <a href="#">⚙ Configurações</a>
+      <a onclick="logout()">↩ Sair</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="topbar">
+      <div>
+        <span>Saldo em conta</span>
+        <h2 id="balance">R$ 0,00</h2>
+      </div>
+
+      <div class="user-area">
+        <span id="userName">Usuário</span>
+        <button onclick="logout()">Sair</button>
+      </div>
+    </header>
+
+    <section class="page">
+      <div class="breadcrumb">⌂ Início > Pix > Depósito</div>
+      <h1>Criar depósito Pix</h1>
+
+      <div class="deposit-grid">
+        <section class="deposit-card">
+          <h2>Nova cobrança</h2>
+          <p>Informe o valor para gerar uma cobrança Pix.</p>
+
+          <form id="depositForm">
+            <label>Valor do depósito</label>
+            <input type="number" id="amount" min="1" step="0.01" placeholder="Ex: 100.00" required>
+
+            <label>CPF do pagador</label>
+            <input type="text" id="cpf" placeholder="000.000.000-00" required>
+
+            <button type="submit">Gerar Pix</button>
+          </form>
+
+          <div class="quick-values">
+            <button onclick="setAmount(10)">R$ 10</button>
+            <button onclick="setAmount(25)">R$ 25</button>
+            <button onclick="setAmount(50)">R$ 50</button>
+            <button onclick="setAmount(100)">R$ 100</button>
+          </div>
+        </section>
+
+        <section class="pix-card" id="pixResult">
+          <div class="empty-pix">
+            <div class="qr-placeholder"></div>
+            <h2>Aguardando geração do Pix</h2>
+            <p>Após gerar a cobrança, o QR Code e o código copia e cola aparecerão aqui.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="card">
+        <h2>Últimos depósitos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Valor</th>
+              <th>Status</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody id="depositList">
+            <tr>
+              <td colspan="4">Nenhum depósito encontrado.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/deposit.js"></script>
+</body>
+</html>

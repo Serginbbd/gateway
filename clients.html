@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meus Clientes - Gateway</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">GATEWAY</div>
+
+    <button class="main-btn" onclick="window.location.href='deposit.html'">
+      Criar cobrança
+    </button>
+
+    <nav>
+      <a href="dashboard.html">⌂ Início</a>
+      <a class="active" href="clients.html">👥 Meus Clientes</a>
+      <a href="charges.html">💵 Cobranças</a>
+      <a href="deposit.html">❖ Pix</a>
+      <a href="payment-links.html">🔗 Links de Pagamento</a>
+      <a href="transactions.html">▤ Transações</a>
+      <a href="settings.html">⚙ Configurações</a>
+      <a onclick="logout()">↩ Sair</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="topbar">
+      <div>
+        <span>Saldo em conta</span>
+        <h2 id="balance">R$ 0,00</h2>
+      </div>
+
+      <div class="user-area">
+        <span id="userName">Usuário</span>
+        <button onclick="logout()">Sair</button>
+      </div>
+    </header>
+
+    <section class="page">
+      <div class="breadcrumb">⌂ Início > Meus Clientes</div>
+      <h1>Meus Clientes</h1>
+
+      <section class="card">
+        <h2>Cadastrar cliente</h2>
+
+        <form id="clientForm" class="form-grid">
+          <input type="text" id="name" placeholder="Nome do cliente" required>
+          <input type="email" id="email" placeholder="E-mail">
+          <input type="text" id="cpf" placeholder="CPF">
+          <input type="text" id="phone" placeholder="Telefone">
+
+          <button type="submit">Cadastrar cliente</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Clientes cadastrados</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>CPF</th>
+              <th>Telefone</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="clientList">
+            <tr>
+              <td colspan="5">Nenhum cliente cadastrado.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/clients.js"></script>
+</body>
+</html>

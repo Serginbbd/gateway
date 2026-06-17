@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cobranças - Gateway</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">GATEWAY</div>
+
+    <button class="main-btn" onclick="window.location.href='charges.html'">
+      Criar cobrança
+    </button>
+
+    <nav>
+      <a href="dashboard.html">⌂ Início</a>
+      <a href="clients.html">👥 Meus Clientes</a>
+      <a class="active" href="charges.html">💵 Cobranças</a>
+      <a href="deposit.html">❖ Pix</a>
+      <a href="payment-links.html">🔗 Links de Pagamento</a>
+      <a href="transactions.html">▤ Transações</a>
+      <a href="settings.html">⚙ Configurações</a>
+      <a onclick="logout()">↩ Sair</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="topbar">
+      <div>
+        <span>Saldo em conta</span>
+        <h2 id="balance">R$ 0,00</h2>
+      </div>
+
+      <div class="user-area">
+        <span id="userName">Usuário</span>
+        <button onclick="logout()">Sair</button>
+      </div>
+    </header>
+
+    <section class="page">
+      <div class="breadcrumb">⌂ Início > Cobranças</div>
+      <h1>Cobranças</h1>
+
+      <section class="card">
+        <h2>Criar cobrança</h2>
+
+        <form id="chargeForm" class="form-grid">
+          <select id="client_id">
+            <option value="">Cliente opcional</option>
+          </select>
+
+          <input type="text" id="title" placeholder="Descrição da cobrança" required>
+          <input type="number" id="amount" placeholder="Valor" min="1" step="0.01" required>
+          <input type="date" id="due_date">
+
+          <button type="submit">Criar cobrança</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Cobranças cadastradas</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Vencimento</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="chargeList">
+            <tr>
+              <td colspan="5">Nenhuma cobrança cadastrada.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/charges.js"></script>
+</body>
+</html>

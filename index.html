@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Gateway</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">GATEWAY</div>
+
+    <button class="main-btn">Criar cobrança</button>
+
+    <nav>
+      <a class="active">Início</a>
+      <a>Meus Clientes</a>
+      <a>Cobranças</a>
+      <a>Pix</a>
+      <a>Links de Pagamento</a>
+      <a>Transações</a>
+      <a>Configurações</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="topbar">
+      <div>
+        <span>Saldo em conta</span>
+        <h2 id="balance">R$ 0,00</h2>
+      </div>
+
+      <div class="icons">
+        <span>▦</span>
+        <span>🔔</span>
+        <span>👤</span>
+      </div>
+    </header>
+
+    <section class="alert">
+      Sua integração pode ser ainda mais segura. Configure sua API e Webhooks.
+    </section>
+
+    <section class="page-title">
+      <p>Início > Integrações > Chaves de API</p>
+      <h1>Chaves de API</h1>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Chaves de API</h2>
+        <button>+ Gerar chave de API</button>
+      </div>
+
+      <p>
+        Sua chave de API permite conectar sua gateway com sistemas externos.
+        Trate essa chave como uma senha.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Data de expiração</th>
+            <th>Situação</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chave Principal</td>
+            <td>30/06/2026</td>
+            <td><span class="status">Habilitada</span></td>
+            <td>Editar | Excluir</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

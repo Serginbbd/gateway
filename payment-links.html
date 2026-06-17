@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Links de Pagamento - Gateway</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">GATEWAY</div>
+
+    <button class="main-btn" onclick="window.location.href='payment-links.html'">
+      Criar cobrança
+    </button>
+
+    <nav>
+      <a href="dashboard.html">⌂ Início</a>
+      <a href="clients.html">👥 Meus Clientes</a>
+      <a href="charges.html">💵 Cobranças</a>
+      <a href="deposit.html">❖ Pix</a>
+      <a class="active" href="payment-links.html">🔗 Links de Pagamento</a>
+      <a href="transactions.html">▤ Transações</a>
+      <a href="settings.html">⚙ Configurações</a>
+      <a onclick="logout()">↩ Sair</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="topbar">
+      <div>
+        <span>Saldo em conta</span>
+        <h2 id="balance">R$ 0,00</h2>
+      </div>
+
+      <div class="user-area">
+        <span id="userName">Usuário</span>
+        <button onclick="logout()">Sair</button>
+      </div>
+    </header>
+
+    <section class="page">
+      <div class="breadcrumb">⌂ Início > Links de Pagamento</div>
+      <h1>Links de Pagamento</h1>
+
+      <section class="card">
+        <h2>Criar link</h2>
+
+        <form id="paymentLinkForm" class="form-grid">
+          <input type="text" id="title" placeholder="Título do pagamento" required>
+          <input type="number" id="amount" placeholder="Valor" min="1" step="0.01" required>
+          <input type="text" id="description" placeholder="Descrição">
+
+          <button type="submit">Criar link de pagamento</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Links criados</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Valor</th>
+              <th>Status</th>
+              <th>Link</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody id="paymentLinkList">
+            <tr>
+              <td colspan="5">Nenhum link criado.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/payment-links.js"></script>
+</body>
+</html>
